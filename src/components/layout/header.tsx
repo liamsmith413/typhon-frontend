@@ -1,15 +1,15 @@
 
-import { cn } from "../common/utils/cn";    
+import { cn } from "../common/utils/cn";
 import { MobileSidebar } from "../layout/mobile-sidebar";
 import Link from "next/link";
 import { UserNav } from "../layout/user-nav";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import Image from 'next/image';
 import imgLogo from '/public/images/logo.png';
 import { WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export default function Header() {
-    const { data: sessionData } = useSession();
+    // const { data: sessionData } = useSession();
     return (
         <WalletModalProvider>
             <div className="supports-backdrop-blur:bg-background/60 fixed left-0 right-0 top-0 z-20 border-b">
@@ -23,7 +23,6 @@ export default function Header() {
                     <div className={cn("block md:!hidden")}>
                         <MobileSidebar />
                     </div>
-
                     <div className="flex items-center gap-2">
                         <WalletMultiButton />
                     </div>

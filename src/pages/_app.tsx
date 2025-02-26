@@ -40,28 +40,21 @@ const MyApp: AppType<{ session: Session | null }> = ({
   const wallets = useMemo(() => [], []);
 
   return (
-
-       <SessionProvider session={session}>
-
-
-        <ConnectionProvider endpoint={endpoint}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <WalletProviderDynamic wallets={wallets} autoConnect>
-              {isHomePage ? (
-                <Component {...pageProps} />
-              ) : (
-                <Layout>
-                  <Component {...pageProps} />
-                  <Toaster />
-                  <ShadcnToaster />
-                </Layout>
-              )}
-            </WalletProviderDynamic>
-          </ThemeProvider>
-       </ConnectionProvider>
-     </SessionProvider>
-
-
+    <ConnectionProvider endpoint={endpoint}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <WalletProviderDynamic wallets={wallets} autoConnect>
+          {isHomePage ? (
+            <Component {...pageProps} />
+          ) : (
+            <Layout>
+              <Component {...pageProps} />
+              <Toaster />
+              <ShadcnToaster />
+            </Layout>
+          )}
+        </WalletProviderDynamic>
+      </ThemeProvider>
+    </ConnectionProvider>
   );
 };
 
