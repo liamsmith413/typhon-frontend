@@ -40,9 +40,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
   const wallets = useMemo(() => [], []);
 
   return (
-    <SessionProvider session={session}>
-    <AuthProvider>
-      <ProtectedRoute>
+
+       <SessionProvider session={session}>
+
+
         <ConnectionProvider endpoint={endpoint}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <WalletProviderDynamic wallets={wallets} autoConnect>
@@ -57,10 +58,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
               )}
             </WalletProviderDynamic>
           </ThemeProvider>
-        </ConnectionProvider>
-      </ProtectedRoute>
-    </AuthProvider>
-  </SessionProvider>
+       </ConnectionProvider>
+     </SessionProvider>
+
+
   );
 };
 

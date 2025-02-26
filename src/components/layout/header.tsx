@@ -25,14 +25,11 @@ export default function Header() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                        {sessionData?.user ? (
-                            <UserNav user={sessionData.user} />
-                        ) : (
-                            <WalletMultiButton />
-                        )}
+                        <WalletMultiButton />
                     </div>
                 </nav>
             </div>
         </WalletModalProvider>
     );
 }
+

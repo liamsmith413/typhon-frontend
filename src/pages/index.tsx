@@ -51,11 +51,10 @@ export default function Home() {
       {/* Fixed top-right button */}
       <div className="fixed right-8 top-8 z-50">
         <Button
-          onClick={openModal}
           size="sm"
           className="w-[200px] bg-[#161616] text-white border-2 border-white"
-        >
-          Get Started
+        ><a href='/home'>
+          Get Started</a>
         </Button>
       </div>
 
