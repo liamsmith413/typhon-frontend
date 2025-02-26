@@ -11,7 +11,6 @@ import {
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
 import { LogOut } from "lucide-react";
-import { UserAvatar } from "../layout/user-avatar";
 
 type Props = {
     user: Pick<User, "name" | "image" | "email">;
@@ -21,10 +20,6 @@ export function UserNav({ user }: Props) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>
-                <UserAvatar
-                    user={{ name: user.name || null, image: user.image || null }}
-                    className="h-8 w-8 cursor-pointer"
-                />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <div className="flex items-center justify-start gap-4 p-2">
